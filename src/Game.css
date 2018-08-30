@@ -1,0 +1,14 @@
+.game {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.back-button {
+    text-align: left;
+}
+
+.back-button span {
+    cursor: pointer;
+    margin-left: .5em;
+}
