@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Modal from './Modal.js';
 import Game from './Game.js';
+import words from './words.js';
 import './App.css';
 
 class App extends Component {
@@ -44,36 +45,11 @@ class App extends Component {
           ?
             <div className="word-card-container">
               <h1>EMOJI SPELL</h1>
-              <button onClick={() => this.startGame('cat')} className="word-card">
-                <span role="img" aria-label="cat">🐈</span>
-              </button>
-              <button onClick={() => this.startGame('dog')} className="word-card">
-                <span role="img" aria-label="dog">🐕</span>
-              </button>
-              <button onClick={() => this.startGame('car')} className="word-card">
-                <span role="img" aria-label="car">🚗</span>
-              </button>
-              <button onClick={() => this.startGame('octopus')} className="word-card">
-                <span role="img" aria-label="octopus">🐙</span>
-              </button>
-              <button onClick={() => this.startGame('alien')} className="word-card">
-                <span role="img" aria-label="alien">👽</span>
-              </button>
-              <button onClick={() => this.startGame('robot')} className="word-card">
-                <span role="img" aria-label="robot">🤖</span>
-              </button>
-              <button onClick={() => this.startGame('ghost')} className="word-card">
-                <span role="img" aria-label="ghost">👻</span>
-              </button>
-              <button onClick={() => this.startGame('baby')} className="word-card">
-                <span role="img" aria-label="baby">👶</span>
-              </button>
-              <button onClick={() => this.startGame('shirt')} className="word-card">
-                <span role="img" aria-label="shirt">👕</span>
-              </button>
-              <button onClick={() => this.startGame('glasses')} className="word-card">
-                <span role="img" aria-label="glasses">👓</span>
-              </button>
+              {Object.keys(words).map(key => 
+                <button onClick={() => this.startGame(key)} className="word-card" key={key}>
+                  <span role="img" aria-label={words[key]}>{words[key]}</span>
+                </button>
+              )}
             </div>
           :
             <Game goal={this.state.goal}

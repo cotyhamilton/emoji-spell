@@ -11,7 +11,7 @@ class Game extends Component {
                 </h1>
                 <h1>{this.props.goal}</h1>
                 <Alphabet update={this.props.updateProgress} />
-                <h1 className="progress">{this.props.progress}</h1>
+                <h1 className="progress">{this.props.progress}_</h1>
                 <h3 onClick={this.props.clear} className="restart-button">clear</h3>
             </div>
         );
