@@ -9,7 +9,8 @@ class App extends Component {
     super();
     this.state = {
       goal: '',
-      progress: ''
+      progress: '',
+      modal: false
     }
   }
 
@@ -21,21 +22,37 @@ class App extends Component {
 
   clear = () => {
     this.setState({
-      progress: ''
+      progress: '',
+      modal: false
     });
   }
 
   startGame = (word) => {
     this.setState({
-      'goal': word
+      goal: word
     });
   }
 
   restart = () => {
     this.setState({
-      'goal': '',
-      'progress': ''
+      goal: '',
+      progress: '',
+      modal: false
     });
+  }
+
+  showModal = (status) => {
+    if (status !== false) {
+      setTimeout(() => {
+        this.setState({
+          modal: status
+        });
+      }, 250);
+    } else {
+      this.setState({
+        modal: false
+      });
+    }
   }
 
   render() {
@@ -60,14 +77,26 @@ class App extends Component {
 
           {this.state.goal && this.state.progress === this.state.goal
             ?
-              <Modal win={true} close={this.restart} />
+              (this.state.modal !== 'win' ? this.showModal('win') : false)
             :
               false}
           
           {this.state.progress.length >= this.state.goal.length && this.state.progress !== this.state.goal
             ?
-              <Modal win={false} close={this.clear} />
+              (this.state.modal !== 'lose' ? this.showModal('lose') : false)
             : 
+              false}
+
+          {this.state.modal === 'win'
+            ?
+              <Modal win={true} close={this.restart} />
+            :
+              false}
+
+          {this.state.modal === 'lose'
+            ?
+              <Modal win={false} close={this.clear} />
+            :
               false}
       </div>
     );

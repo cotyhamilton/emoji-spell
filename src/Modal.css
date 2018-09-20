@@ -20,13 +20,29 @@
     flex-direction: column;
 }
 
-.status {
-    margin-top: 5em;
-}
-
 .restart {
     color: #ff0052;
     cursor: pointer;
     margin: 2em;
     margin-top: auto;
 }
+
+.modal-text {
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -30%);
+
+}
+  
+  .win-emoji {
+    display: inline-block;
+    font-size: 5em;
+    margin: .5em
+  }
+
+  .lose-emoji {
+    display: inline-block;
+    font-size: 5em;
+    margin: .5em
+  }
