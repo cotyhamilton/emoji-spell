@@ -64,7 +64,7 @@ class App extends Component {
               <h1>EMOJI SPELL</h1>
               {Object.keys(words).map(key => 
                 <button onClick={() => this.startGame(key)} className="word-card" key={key}>
-                  <span role="img" aria-label={words[key]}>{words[key]}</span>
+                  <i class={'em-svg em-' + words[key]}></i>
                 </button>
               )}
             </div>

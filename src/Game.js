@@ -7,7 +7,7 @@ class Game extends Component {
         return (
             <div className="game">
                 <h1 className="back-button">
-                    <span onClick={this.props.restart} role="img" aria-label="go back">👈</span>
+                    <i onClick={this.props.restart} class="em-svg em-point_left"></i>
                 </h1>
                 <h1>{this.props.goal}</h1>
                 <Alphabet update={this.props.updateProgress} />
