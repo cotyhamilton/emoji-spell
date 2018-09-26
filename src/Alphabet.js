@@ -9,7 +9,7 @@ class Alphabet extends Component {
     render () {
         return(
             <div className="alphabet">
-                {['a','b','c','d','e','f','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'].map((l,i) =>
+                {['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'].map((l,i) =>
                     <button className="letter" onClick={(e) => this.update(l, e)} letter={l} key={i}>{l}</button>
                 )}
             </div>
