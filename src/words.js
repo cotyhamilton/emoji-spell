@@ -8,7 +8,31 @@ const words = {
     'glasses': 'eyeglasses',
     'octopus': 'octopus',
     'robot': 'robot_face',
-    'shirt': 'shirt'
+    'shirt': 'shirt',
+    'pig': 'pig',
+    'fox': 'fox_face',
+    'chicken': 'chicken',
+    'whale': 'whale',
+    'fish': 'fish',
+    'dragon': 'dragon',
+    'cactus': 'cactus',
+    'flower': 'blossom',
+    'earth': 'earth_americas',
+    'moon': 'waning_gibbous_moon',
+    'star': 'star',
+    'sun': 'sunny',
+    'cloud': 'cloud',
+    'fire': 'fire',
+    'apple': 'apple',
+    'banana': 'banana',
+    'peach': 'peach',
+    'egg': 'egg',
+    'pizza': 'pizza',
+    'football': 'football',
+    'tractor': 'tractor',
+    'bike': 'bike',
+    'airplane': 'airplane'
+
 }
 
 export default words;

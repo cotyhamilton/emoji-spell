@@ -27,15 +27,17 @@ class App extends Component {
     });
   }
 
-  startGame = (word) => {
+  startGame = (goal, emoji) => {
     this.setState({
-      goal: word
+      goal: goal,
+      emoji: emoji
     });
   }
 
   restart = () => {
     this.setState({
       goal: '',
+      emoji: '',
       progress: '',
       modal: false
     });
@@ -60,16 +62,19 @@ class App extends Component {
       <div className="App">
         {!this.state.goal
           ?
-            <div className="word-card-container">
-              <h1>EMOJI SPELL</h1>
-              {Object.keys(words).map(key => 
-                <button onClick={() => this.startGame(key)} className="word-card" key={key}>
-                  <i class={'em-svg em-' + words[key]}></i>
-                </button>
-              )}
+            <div>
+              <div><img className="logo" src="/logo.svg"/></div>
+              <div className="word-card-container">
+                {Object.keys(words).map(key => 
+                  <div onClick={() => this.startGame(key,words[key])} className="word-card" key={key}>
+                    <i className={'em-svg em-' + words[key]}></i>
+                  </div>
+                )}
+              </div>
             </div>
           :
             <Game goal={this.state.goal}
+                  emoji={this.state.emoji}
                   progress={this.state.progress}
                   updateProgress={this.updateProgress}
                   clear={this.clear}

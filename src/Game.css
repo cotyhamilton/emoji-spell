@@ -1,14 +1,25 @@
 .game {
     display: flex;
     flex-direction: column;
+    font-size: 1.4rem;
     height: 100vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-transform: uppercase;
 }
 
 .back-button {
+    font-size: 2.4rem;
+    margin: 0;
+    padding: .5em 0 0 .5em;
     text-align: left;
 }
 
-.back-button span {
-    cursor: pointer;
-    margin-left: .5em;
+.emoji {
+    font-size: 3.6rem;
+    margin: 2rem 0 1rem;
+}
+
+.goal {
+    margin: 2rem 0;
 }

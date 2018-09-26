@@ -10,16 +10,14 @@ class Modal extends Component {
                         <div className="modal-content">
                             <h1><i class="em-svg em-tada"></i></h1>
                             <div className="modal-text">
-                                <h1 className="status">YOU WIN</h1>
-                                <h3 className="restart" onClick={this.props.close}>new</h3>
+                                <h3 className="restart" onClick={this.props.close}>NEW</h3>
                             </div>
                         </div>
                     :
                         <div className="modal-content">
                             <h1><i class="em-svg em-flushed"></i></h1>
                             <div className="modal-text">
-                                <h1 className="status">UH OH</h1>
-                                <h3 className="restart" onClick={this.props.close}>try again</h3>
+                                <h3 className="restart" onClick={this.props.close}>TRY AGAIN</h3>
                             </div>
                         </div>}
             </div>   
