@@ -15,6 +15,7 @@ body, html {
   background-color: #f90;
   background-image: linear-gradient(135deg, #f90, #ff0052);
   color: #fcfcfc;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   overflow: auto;
@@ -50,4 +51,10 @@ body, html {
   margin: .2em;
   height: 1.6em;
   width: 1.6em;
+}
+
+@media (min-width: 38em) {
+  .logo {
+      max-width: 38em;
+  }
 }

@@ -23,3 +23,10 @@
 .goal {
     margin: 2rem 0;
 }
+
+@media (min-width: 48em) {
+    .game {
+        max-width: 48em;
+        margin: auto;
+    }
+}
