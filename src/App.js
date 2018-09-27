@@ -63,7 +63,7 @@ class App extends Component {
         {!this.state.goal
           ?
             <div>
-              <div><img className="logo" src="/logo.svg"/></div>
+              <div><img className="logo" src="/logo.svg" alt="emoji spell logo"/></div>
               <div className="word-card-container">
                 {Object.keys(words).map(key => 
                   <div onClick={() => this.startGame(key,words[key])} className="word-card" key={key}>
