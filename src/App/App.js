@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Modal from './Modal.js';
-import Game from './Game.js';
+import Modal from './Modal';
+import Game from './Game';
 import words from './words.js';
 import './App.css';
 

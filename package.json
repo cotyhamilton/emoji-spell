@@ -18,6 +18,7 @@
     "deploy": "gh-pages -d build"
   },
   "devDependencies": {
+    "create-react-component-folder": "^0.1.25",
     "gh-pages": "^1.2.0"
   },
   "homepage": "https://emojispell.com"
