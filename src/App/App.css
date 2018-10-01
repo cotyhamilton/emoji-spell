@@ -42,15 +42,27 @@ body, html {
   margin-top: auto;
 }
 
-.word-card {
-  background: none;
-  border-radius: 3px;
-  border: none;
-  cursor: pointer;
-  font-size: 5.4rem;
-  margin: .2em;
-  height: 1.6em;
-  width: 1.6em;
+.wiggle {
+  animation: wiggle 1s linear;
+}
+
+.wiggle-loop {
+  animation: wiggle 1s linear infinite;
+}
+
+@keyframes wiggle {
+  25% {transform: rotate(-10deg);}
+  50% {transform: rotate(20deg);}
+  75% {transform: rotate(-5deg);}
+  100% {transform: rotate(0deg);}
+}
+
+.spin {
+  animation: spin .75s linear;
+}
+
+@keyframes spin {
+  100% {transform: rotate(360deg);}
 }
 
 @media (min-width: 38em) {

@@ -1,0 +1,10 @@
+.card {
+    background: none;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    font-size: 5.4rem;
+    margin: .2em;
+    height: 1.6em;
+    width: 1.6em;
+}

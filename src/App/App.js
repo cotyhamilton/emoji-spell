@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Modal from './Modal';
 import Game from './Game';
-import words from './words.js';
+import Cards from './Cards';
 import './App.css';
 
 class App extends Component {
@@ -18,6 +18,9 @@ class App extends Component {
     this.setState({
       progress: this.state.progress + letter
     });
+    if(this.state.progress !== this.state.goal.slice(0,this.state.progress.length)) {
+      document.getElementById('bomb').classList.add('wiggle-loop');
+    }
   }
 
   clear = () => {
@@ -25,6 +28,7 @@ class App extends Component {
       progress: '',
       modal: false
     });
+    document.getElementById('bomb').classList.remove('wiggle-loop');
   }
 
   startGame = (goal, emoji) => {
@@ -64,13 +68,7 @@ class App extends Component {
           ?
             <div>
               <div><img className="logo" src="/logo.svg" alt="emoji spell logo"/></div>
-              <div className="word-card-container">
-                {Object.keys(words).map(key => 
-                  <div onClick={() => this.startGame(key,words[key])} className="word-card" key={key}>
-                    <i className={'em-svg em-' + words[key]}></i>
-                  </div>
-                )}
-              </div>
+              <Cards startGame={this.startGame} goal={this.state.goal}/>
             </div>
           :
             <Game goal={this.state.goal}
