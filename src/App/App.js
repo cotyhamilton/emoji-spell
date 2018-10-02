@@ -12,7 +12,7 @@ class App extends Component {
       progress: '',
       modal: false
     }
-    this.click = new Audio('tab 1.m4a');
+    this.click = new Audio('./Tab 1.m4a');
   }
 
   updateProgress = (letter) => {
