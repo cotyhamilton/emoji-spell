@@ -11,7 +11,7 @@ class Game extends Component {
                 </h1>
                 <p className="emoji"><i className={'spin em-svg em-' + this.props.emoji}></i></p>
                 <h1 className="goal">{this.props.goal}</h1>
-                <Alphabet update={this.props.updateProgress} />
+                <Alphabet update={this.props.updateProgress} goal={this.props.goal}/>
                 <h1 className="progress">{this.props.progress}{' _'.repeat(this.props.goal.length - this.props.progress.length)}</h1>
                 <h1 onClick={this.props.clear} className="restart-button">
                     <i className={'em-svg em-bomb'} id='bomb'></i>

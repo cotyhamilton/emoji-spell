@@ -19,7 +19,6 @@ class Cards extends Component {
     this.animationInterval = setInterval(() => {
       let word = Object.keys(words)[Math.floor(Math.random()*keys)];
       this.animate(word);
-      console.log(word);
       setTimeout(() => {
         this.unAnimate(word);
       }, 1000);
