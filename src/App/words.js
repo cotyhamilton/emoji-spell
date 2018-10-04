@@ -7,6 +7,7 @@ const words = {
     'ghost': 'ghost',
     'glasses': 'eyeglasses',
     'octopus': 'octopus',
+    'dinosaur': 'sauropod',
     'robot': 'robot_face',
     'shirt': 'shirt',
     'pig': 'pig',
