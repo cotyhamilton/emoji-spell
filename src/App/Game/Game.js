@@ -3,6 +3,11 @@ import Alphabet from '../Alphabet';
 import './Game.css';
 
 class Game extends Component {
+    clear = () => {
+        this.props.boom();
+        this.props.clear();
+    }
+
     render() {
         return (
             <div className="game">
@@ -13,7 +18,7 @@ class Game extends Component {
                 <h1 className="goal">{this.props.goal}</h1>
                 <Alphabet update={this.props.updateProgress} goal={this.props.goal}/>
                 <h1 className="progress">{this.props.progress}{' _'.repeat(this.props.goal.length - this.props.progress.length)}</h1>
-                <h1 onClick={this.props.clear} className="restart-button">
+                <h1 onClick={this.clear} className="restart-button">
                     <i className={'em-svg em-bomb'} id='bomb'></i>
                 </h1>
             </div>

@@ -12,11 +12,13 @@ class App extends Component {
       progress: '',
       modal: false
     }
-    this.click = new Audio('./Tab 1.m4a');
+    this.letterSound = new Audio('./letter.m4a');
+    this.newWordSound = new Audio('./new-word.m4a');
+    this.boomSound = new Audio('./boom.mp3');
   }
 
   updateProgress = (letter) => {
-    this.click.play();
+    this.letterSound.play();
     this.setState({
       progress: this.state.progress + letter
     });
@@ -33,7 +35,12 @@ class App extends Component {
     document.getElementById('bomb').classList.remove('wiggle-loop');
   }
 
+  boom = () => {
+    this.boomSound.play();
+  }
+
   startGame = (goal, emoji) => {
+    this.newWordSound.play();
     this.setState({
       goal: goal,
       emoji: emoji
@@ -78,7 +85,8 @@ class App extends Component {
                   progress={this.state.progress}
                   updateProgress={this.updateProgress}
                   clear={this.clear}
-                  restart={this.restart}/> }
+                  restart={this.restart}
+                  boom={this.boom}/> }
 
           {this.state.goal && this.state.progress === this.state.goal
             ?
