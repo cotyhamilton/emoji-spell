@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Card from './Card';
 import words from '../words.js';
+import './Cards.css';
 
 class Cards extends Component {
 
@@ -31,7 +32,7 @@ class Cards extends Component {
 
   render() {
     return (
-      <div className="word-card-container">
+      <div className="cards">
         {Object.keys(words).map(key => 
           <Card onClick={(e) => this.startGame(key,words[key], e)} startGame={this.props.startGame} id={key} key={key} emoji={words[key]}/>
         )}

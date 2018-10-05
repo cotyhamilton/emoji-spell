@@ -2,19 +2,36 @@ import React, { Component } from 'react';
 import Modal from './Modal';
 import Game from './Game';
 import Cards from './Cards';
+import InstallPrompt from './InstallPrompt';
 import './App.css';
 
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      goal: '',
-      progress: '',
-      modal: false
+
+    // Detects if device is on iOS 
+    const isIos = () => {
+      const userAgent = window.navigator.userAgent.toLowerCase();
+      return /iphone|ipad|ipod/.test( userAgent );
     }
+    // Detects if device is in standalone mode
+    const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+
+    // Checks if should display install popup notification:
+    if (isIos() && !isInStandaloneMode()) {
+      this.installMessage = true;
+    }
+
     this.letterSound = new Audio('./letter.m4a');
     this.newWordSound = new Audio('./new-word.m4a');
     this.boomSound = new Audio('./boom.mp3');
+
+    this.state = {
+      goal: '',
+      progress: '',
+      modal: false,
+      showInstallMessage: this.installMessage
+    }
   }
 
   updateProgress = (letter) => {
@@ -70,13 +87,19 @@ class App extends Component {
     }
   }
 
+  closeInstallPrompt =  () => {
+    this.setState({
+      showInstallMessage: false
+    });
+  }
+
   render() {
     return (
       <div className="App">
+        {this.state.showInstallMessage ? <InstallPrompt close={this.closeInstallPrompt} /> : null}
         {!this.state.goal
           ?
             <div>
-              <div><img className="logo" src="/logo.svg" alt="emoji spell logo"/></div>
               <Cards startGame={this.startGame} goal={this.state.goal}/>
             </div>
           :

@@ -28,15 +28,6 @@ body, html {
   width: 90vw;
 }
 
-.word-card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-  text-transform: uppercase;
-  width: 100vw;
-}
-
 .restart-button {
   cursor: pointer;
   margin-top: auto;
