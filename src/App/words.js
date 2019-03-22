@@ -32,7 +32,7 @@ const words = {
     'football': 'football',
     'tractor': 'tractor',
     'bike': 'bike',
-    'airplane': 'airplane'
+    'airplane': 'airplane',
     'hamster': 'hamster',
     'mouse': 'mouse',
     'tiger': 'tiger2',
