@@ -33,7 +33,15 @@ const words = {
     'tractor': 'tractor',
     'bike': 'bike',
     'airplane': 'airplane'
-
+    'hamster': 'hamster',
+    'mouse': 'mouse',
+    'tiger': 'tiger2',
+    'cow': 'cow2',
+    'hedgehog': 'hedgehog',
+    'rose': 'rose',
+    'skull': 'skull',
+    'pumpkin': 'jack_o_lantern',
+    'devil': 'japanese_ogre'
 }
 
 export default words;
